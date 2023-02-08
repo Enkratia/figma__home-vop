@@ -1,0 +1,274 @@
+/*========= BRAND =========*/
+.brand {
+  position: relative;
+  z-index: 10;
+  display: inline-block;
+}
+
+.brand__img {
+  width: 134px;
+}
+
+/*========= FACTS =========*/
+.facts {
+  max-width: 794px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-flow: row nowrap;
+  margin-inline: auto;
+}
+
+.facts__item {
+  width: 100%;
+  text-align: center;
+}
+
+.facts__item-icon::before {
+  font-size: 80px;
+  color: #D4C17F;
+}
+
+.facts__item-title {
+  padding-top: 53px;
+  font-family: 'Roboto', sans-serif !important;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 115%;
+}
+
+/*========= OUR ROOMS =========*/
+.room {
+  position: relative;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.room::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(#242B33 0%, rgba(36, 43, 51, 0) 0.01%, #242B33 100%);
+  transition: all .2s ease-out;
+}
+
+.room:hover::before {
+  height: 0;
+}
+
+.room__title {
+  position: absolute;
+  left: 50px;
+  bottom: 50px;
+  right: 50px;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+/*========= FORM =========*/
+.form {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.form__item {
+  width: calc(50% - 15px);
+  margin-bottom: 35px;
+}
+
+.form-control {
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 13px;
+  color: #FFF;
+  background-color: rgba(255, 255, 255, .2);
+  transition: all .09s ease-out;
+}
+
+.form-control:focus {
+  background-color: rgba(255, 255, 255, .24);
+}
+
+.form-control::placeholder {
+  color: #BEBEBE;
+}
+
+/*========= VIDEO =========*/
+.video {
+  position: relative;
+}
+
+.video::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #242B33;
+  opacity: .8;
+  transition: all .09s ease-out;
+}
+
+.video:hover::before {
+  opacity: .4;
+}
+
+.video::after {
+  content: "";
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-image: url("/img/icons/play-button.svg");
+  background-size: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all .09s ease-out;
+}
+
+.video:hover::after {
+  transform: translate(-50%, -50%) scale(1.05);
+  box-shadow: 0 0 10px rgba(212, 193, 127, .6);
+}
+
+/*========= MAP =========*/
+.map {
+  height: 358px;
+  background-color: #626262;
+}
+
+/*========= FAQ =========*/
+.faq__items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 30px;
+}
+
+.faq__item {
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .form {
+    justify-content: center;
+  }
+
+  .form__item {
+    width: 100%;
+  }
+
+  .form__item:nth-child(1) {
+    margin-bottom: 10px;
+  }
+
+  .form__item:nth-child(2) {
+    margin-bottom: 25px;
+  }
+
+  .form__item:nth-child(3) {
+    margin-top: 10px;
+    order: 1;
+  } 
+}
+
+@media (max-width: 992px) {
+  .faq__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 30px;
+    margin-inline: auto;
+  }
+
+  .faq__item:nth-child(1) {
+    order: 1;
+    justify-self: center;
+    grid-column: 1 / 3;
+    margin-top: -20px;
+  }
+
+  .faq__item:nth-child(4) {
+    justify-self: center;
+    grid-column: 1 / 3;
+    width: calc(50% - 15px);
+  }
+}
+
+@media (max-width: 768px) {
+  .facts {
+    flex-flow: row wrap;
+  }
+
+  .facts__item {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+
+  .facts__item-title {
+    padding-top: 20px;
+  }
+
+  .room {
+    max-width: 400px;
+    margin: 0 auto 15px;
+  }
+
+  .faq__items {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+    margin-inline: auto;
+  }
+
+  .faq__item:nth-child(1) {
+    order: 1;
+    justify-self: center;
+    grid-column: 1;
+    margin-top: -20px;
+  }
+
+  .faq__item:nth-child(4) {
+    justify-self: center;
+    grid-column: 1;
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .facts__item-icon::before {
+    font-size: 60px;
+  }
+
+  .room {
+    max-width: 320px;
+  }
+
+  .room__title {
+    font-size: 18px;
+    left: 30px;
+    bottom: 26px;
+  }
+
+  .form {
+    max-width: 255px;
+    margin: 30px auto;
+  }
+
+  .video::after {
+    background-size: 50px;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+
